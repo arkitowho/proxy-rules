@@ -1,0 +1,17 @@
+parsers:
+  - url: 
+    yaml:
+      prepend-rules:
+        - DOMAIN-SUFFIX,dl.amplesound.net,REJECT  #Block Ample Sound
+        - DOMAIN-SUFFIX,d3.amplesound.net,REJECT
+        - DOMAIN-SUFFIX,cm.steampowered.com,DIRECT  #Steam login Server Direct in China
+        - DOMAIN-SUFFIX,steamserver.net,DIRECT
+        - DOMAIN-SUFFIX,api.steampowered.com,DIRECT
+        - DOMAIN-SUFFIX,extransfer.xyz,DIRECT  
+        - DOMAIN-SUFFIX,akamaized.net,DIRECT  #akamai Direct in China
+        - PROCESS-NAME,Netch.exe,DIRECT
+        - PROCESS-NAME,EpicGamesLauncher.exe,DIRECT
+        - PROCESS-NAME,qbittorrent.exe,DIRECT
+        - PROCESS-NAME,BandaiNamcoLauncher.exe,🇯🇵 日本节点  #Bandai Launcher Direct
+        - PROCESS-NAME,BandaiNamcoLauncherService.exe,🇯🇵 日本节点
+        - PROCESS-NAME,BLUEPROTOCOL-Win64-Shipping.exe,🇯🇵 日本节点  #BLUE PROCOTOL
