@@ -2,16 +2,21 @@ parsers:
   - url: 
     yaml:
       prepend-rules:
-        - DOMAIN-SUFFIX,dl.amplesound.net,REJECT  #Block Ample Sound
+        - DOMAIN-SUFFIX,dl.amplesound.net,REJECT
         - DOMAIN-SUFFIX,d3.amplesound.net,REJECT
-        - DOMAIN-SUFFIX,cm.steampowered.com,DIRECT  #Steam login Server Direct in China
+        - DOMAIN-SUFFIX,cm.steampowered.com,DIRECT
         - DOMAIN-SUFFIX,steamserver.net,DIRECT
         - DOMAIN-SUFFIX,api.steampowered.com,DIRECT
-        - DOMAIN-SUFFIX,extransfer.xyz,DIRECT  
-        - DOMAIN-SUFFIX,akamaized.net,DIRECT  #akamai Direct in China
+        - DOMAIN-SUFFIX,extransfer.xyz,DIRECT
+        - DOMAIN-SUFFIX,akamaized.net,DIRECT
+        - DOMAIN-SUFFIX,akamaihd.net,DIRECT
+        - DOMAIN-SUFFIX,store.ubi.com,DIRECT
+        - DOMAIN-SUFFIX,store.ubisoft.com,DIRECT
+        - DOMAIN-SUFFIX,nexon.com,🇭🇰 香港节点
+        - DOMAIN-SUFFIX,nexoncdn.co.kr,🇭🇰 香港节点
         - PROCESS-NAME,Netch.exe,DIRECT
         - PROCESS-NAME,EpicGamesLauncher.exe,DIRECT
         - PROCESS-NAME,qbittorrent.exe,DIRECT
-        - PROCESS-NAME,BandaiNamcoLauncher.exe,🇯🇵 日本节点  #Bandai Launcher Direct
+        - PROCESS-NAME,BandaiNamcoLauncher.exe,🇯🇵 日本节点
         - PROCESS-NAME,BandaiNamcoLauncherService.exe,🇯🇵 日本节点
-        - PROCESS-NAME,BLUEPROTOCOL-Win64-Shipping.exe,🇯🇵 日本节点  #BLUE PROCOTOL
+        - PROCESS-NAME,BLUEPROTOCOL-Win64-Shipping.exe,🇯🇵 日本节点
