@@ -1,22 +1,48 @@
-parsers:
-  - url: 
-    yaml:
-      prepend-rules:
+parsers: 
+    - url: 
+      yaml:
+        prepend-rules:
+        #Ample Sound Block
         - DOMAIN-SUFFIX,dl.amplesound.net,REJECT
         - DOMAIN-SUFFIX,d3.amplesound.net,REJECT
+        #Steam Download Bypass
         - DOMAIN-SUFFIX,cm.steampowered.com,DIRECT
         - DOMAIN-SUFFIX,steamserver.net,DIRECT
-        - DOMAIN-SUFFIX,api.steampowered.com,DIRECT
+        #- DOMAIN-SUFFIX,api.steampowered.com,DIRECT
+        #速方云
         - DOMAIN-SUFFIX,extransfer.xyz,DIRECT
+        - DOMAIN-SUFFIX,suu-fun.com,DIRECT
+        #Akamai CDN
         - DOMAIN-SUFFIX,akamaized.net,DIRECT
-        - DOMAIN-SUFFIX,akamaihd.net,DIRECT
-        - DOMAIN-SUFFIX,store.ubi.com,DIRECT
-        - DOMAIN-SUFFIX,store.ubisoft.com,DIRECT
-        - DOMAIN-SUFFIX,nexon.com,🇭🇰 香港节点
-        - DOMAIN-SUFFIX,nexoncdn.co.kr,🇭🇰 香港节点
+        #Ubisoft
+        - DOMAIN-SUFFIX,ubi.com,DIRECT
+        - DOMAIN-SUFFIX,ubisoft.com,DIRECT
+        #BlackMagic
+        - DOMAIN-SUFFIX,blackmagicdesign.com,DIRECT
+        - DOMAIN-SUFFIX,bemani.cc,DIRECT
+        - DOMAIN-SUFFIX,komani.moe,DIRECT
+        #Ableton
+        - DOMAIN-SUFFIX,ableton.com,DIRECT
+        #Cycling74
+        - DOMAIN-SUFFIX,cycling74.com,DIRECT
+        #Netch
         - PROCESS-NAME,Netch.exe,DIRECT
+        #Epic Download Bypass
         - PROCESS-NAME,EpicGamesLauncher.exe,DIRECT
+        #qbittorrent
         - PROCESS-NAME,qbittorrent.exe,DIRECT
-        - PROCESS-NAME,BandaiNamcoLauncher.exe,🇯🇵 日本节点
-        - PROCESS-NAME,BandaiNamcoLauncherService.exe,🇯🇵 日本节点
-        - PROCESS-NAME,BLUEPROTOCOL-Win64-Shipping.exe,🇯🇵 日本节点
+        #Riot Games
+        - PROCESS-NAME,RiotClientServices.exe,DIRECT
+        #TailScale
+        - DOMAIN-SUFFIX,tailscale.com,DIRECT
+        - PROCESS-NAME,tailscale-ipn.exe,DIRECT
+        - PROCESS-NAME,tailscaled.exe,DIRECT
+        - IP-CIDR,100.64.0.0/10,DIRECT
+        - IP-CIDR,fd7a:115c:a1e0::/48,DIRECT
+        - DOMAIN-SUFFIX,ts.net,DIRECT
+        #Nexon TW
+        - DOMAIN-SUFFIX,nexon.com,🇨🇳 台湾节点
+        - DOMAIN-SUFFIX,nexoncdn.co.kr,🇨🇳 台湾节点
+        - DOMAIN-SUFFIX,nexon.io,🇨🇳 台湾节点
+        #Pikpak
+        - PROCESS-NAME,PikPak.exe,🚀 节点选择
