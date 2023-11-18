@@ -1,2 +1,2 @@
-# clashrule-parsers
-self used parsers rules
+# Proxy Route Rules
+For my self

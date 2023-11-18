@@ -22,9 +22,9 @@ parsers:
         - DOMAIN-SUFFIX,bemani.cc,DIRECT
         - DOMAIN-SUFFIX,komani.moe,DIRECT
         #Ableton
-        - DOMAIN-SUFFIX,ableton.com,DIRECT
+        #- DOMAIN-SUFFIX,ableton.com,DIRECT
         #Cycling74
-        - DOMAIN-SUFFIX,cycling74.com,DIRECT
+        #- DOMAIN-SUFFIX,cycling74.com,DIRECT
         #Netch
         - PROCESS-NAME,Netch.exe,DIRECT
         #Epic Download Bypass
@@ -46,3 +46,6 @@ parsers:
         - DOMAIN-SUFFIX,nexon.io,🇨🇳 台湾节点
         #Pikpak
         - PROCESS-NAME,PikPak.exe,🚀 节点选择
+        - PROCESS-NAME,DownloadServer.exe,🚀 节点选择
+        #Soulseek
+        - PROCESS-NAME,SoulseekQt.exe,DIRECT
