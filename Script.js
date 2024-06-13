@@ -208,7 +208,7 @@ const ruleProviders = {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://cdn.jsdelivr.net/gh/arkitowho/verge-rules@main/rules/BlueArchiveGB.yaml",
-    "path": "./ruleset/blackmatrix7/bluearchivegb.yaml"
+    "path": "./ruleset/arkitowho/bluearchivegb.yaml"
   },
 };
 // 规则
