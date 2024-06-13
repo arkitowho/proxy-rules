@@ -224,7 +224,7 @@ const rules = [
   "RULE-SET,Spotify,United State",
   "RULE-SET,Bing,Bing",
   "RULE-SET,NIKKE,Japan",
-  "RULE-SET,EpicGames,Bypass",
+  "RULE-SET,EpicGames,Epic Games",
   "RULE-SET,Ubisoft,Bypass",
   // Loyalsoldier 规则集
   "RULE-SET,Applications,Bypass",
@@ -253,18 +253,24 @@ const rules = [
   "DOMAIN-SUFFIX,suu-fun.com,Bypass",
   "DOMAIN-SUFFIX,store.ubi.com,Bypass",
   // Piracy Host Block
+    // Ample Sound
   "DOMAIN-SUFFIX,dl.amplesound.net,REJECT",
   "DOMAIN-SUFFIX,d3.amplesound.net,REJECT",
+    // Rekordbox
   "DOMAIN-SUFFIX,cloud.kuvo.com,REJECT",
   "DOMAIN-SUFFIX,rb-share.kuvo.com,REJECT",
   "DOMAIN-SUFFIX,accounts.us1.gigya.com,REJECT",
   "DOMAIN-SUFFIX,us1.gigya.com,REJECT",
+    // Goodhertz
   "DOMAIN-SUFFIX,expatriate.goodhertz.co,REJECT",
   "DOMAIN-SUFFIX,goodhertz.co,REJECT",
+    // Melda Production
   "DOMAIN-SUFFIX,www.meldaproduction.com,REJECT",
-  "DOMAIN-SUFFIX,activate.bitsum.com,REJECT",
+    // SonicAcademy ANA
   "DOMAIN-SUFFIX,www.sonicacademy.com,REJECT",
+    // Virtual DJ
   "DOMAIN-SUFFIX,live.virtualdj.com,REJECT",
+    // LennarDigital
   "DOMAIN-SUFFIX,www.lennardigital.com,REJECT",
   "DOMAIN-SUFFIX,rhea.exsilia.net,REJECT",
   // 其他规则
@@ -277,7 +283,7 @@ const rules = [
 const groupBaseOption = {
   "interval": 300,
   "timeout": 3000,
-  "url": "http://cp.cloudflare.com/",
+  "url": "http://www.gstatic.com/generate_204",
   "lazy": true,
   "max-failed-times": 3,
   "hidden": false
@@ -355,6 +361,14 @@ function main(config) {
       "proxies": ["Proxy", "Bypass", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "Epic Games",
+      "type": "select",
+      "proxies": ["Proxy", "Bypass", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
+      "include-all": true,
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/epic.svg"
     },
     {
       ...groupBaseOption,
