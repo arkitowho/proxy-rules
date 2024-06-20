@@ -1,4 +1,6 @@
 #Rule: Blue Archive Global
 payload:
-  - DOMAIN-SUFFIX,nexon.com
-  - DOMAIN-SUFFIX,nexoncdn.co.kr
+  - DOMAIN-SUFFIX,m-api.nexon.com
+  - DOMAIN-SUFFIX,ba.dn.nexoncdn.co.kr
+  - DOMAIN-SUFFIX,api.ngsm.nexon.com
+  - DOMAIN-SUFFIX,stamp.mp.nexon.com
