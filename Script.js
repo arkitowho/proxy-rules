@@ -207,7 +207,7 @@ const ruleProviders = {
   "BlueArchiveGB": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/arkitowho/verge-rules@main/rules/BlueArchiveGB.yaml",
+    "url": "https://raw.githubusercontent.com/arkitowho/verge-rules/main/rules/BlueArchiveGB.yaml",
     "path": "./ruleset/arkitowho/bluearchivegb.yaml"
   },
 };
@@ -240,12 +240,16 @@ const rules = [
   "RULE-SET,cncidr,Bypass,no-resolve",
   "RULE-SET,telegramcidr,Telegram,no-resolve",
   // Rules
-  "RULE-SET,BlueArchiveGB,Taiwan",
+  "RULE-SET,BlueArchiveGB,Hong Kong",
   // Process
   "PROCESS-NAME,nikke.exe,Japan",
   "PROCESS-NAME,intl_service.exe,Japan",
   // Process Bypass
-  "PROCESS-NAME,SoulseekQt.exe,Bypass",
+  "PROCESS-NAME,SoulseekQt.exe,DIRECT",
+  "PROCESS-NAME,parsecd.exe,DIRECT",
+  "PROCESS-NAME,pservice.exe,DIRECT",
+  "PROCESS-NAME,sunshine.exe,DIRECT",
+  "PROCESS-NAME,sunshinesvc.exe,DIRECT",
   // Bypass
   "DOMAIN-SUFFIX,bemani.cc,Bypass",
   "DOMAIN-SUFFIX,komani.moe,Bypass",
@@ -262,8 +266,11 @@ const rules = [
   "DOMAIN-SUFFIX,accounts.us1.gigya.com,REJECT",
   "DOMAIN-SUFFIX,us1.gigya.com,REJECT",
     // Goodhertz
+  "DOMAIN-SUFFIX,www.expatriate.goodhertz.co,REJECT",
   "DOMAIN-SUFFIX,expatriate.goodhertz.co,REJECT",
-  "DOMAIN-SUFFIX,goodhertz.co,REJECT",
+  "DOMAIN-SUFFIX,goodhertz.com,REJECT",
+  "DOMAIN-SUFFIX,juce.com,REJECT",
+  "DOMAIN-SUFFIX,www.juce.com,REJECT",
     // Melda Production
   "DOMAIN-SUFFIX,www.meldaproduction.com,REJECT",
     // SonicAcademy ANA
