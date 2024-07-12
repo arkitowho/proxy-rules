@@ -207,7 +207,7 @@ const ruleProviders = {
   "BlueArchiveGB": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/arkitowho/verge-rules/main/rules/BlueArchiveGB.yaml",
+    "url": "https://cdn.jsdelivr.net/gh/arkitowho/verge-rules@main/rules/BlueArchiveGB.yaml",
     "path": "./ruleset/arkitowho/bluearchivegb.yaml"
   },
 };
