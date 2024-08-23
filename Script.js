@@ -214,7 +214,7 @@ const ruleProviders = {
 // 规则
 const rules = [
   // Rules
-  "RULE-SET,BlueArchiveGB,Hong Kong",
+  "RULE-SET,BlueArchiveGB,Taiwan",
   // blackmatrix7 规则集
   "RULE-SET,SteamCN,Bypass",
   "RULE-SET,GameDownloadCN,Bypass",
