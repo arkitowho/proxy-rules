@@ -213,13 +213,15 @@ const ruleProviders = {
 };
 // 规则
 const rules = [
+  // Rules
+  "RULE-SET,BlueArchiveGB,Hong Kong",
   // blackmatrix7 规则集
+  "RULE-SET,SteamCN,Bypass",
+  "RULE-SET,GameDownloadCN,Bypass",
   "RULE-SET,OpenAI,All AI",
   "RULE-SET,Gemini,All AI",
   "RULE-SET,Claude,All AI",
   "RULE-SET,OneDrive,OneDrive",
-  "RULE-SET,SteamCN,Bypass",
-  "RULE-SET,GameDownloadCN,Bypass",
   "RULE-SET,Soundcloud,United State",
   "RULE-SET,Spotify,United State",
   "RULE-SET,Bing,Bing",
@@ -232,15 +234,13 @@ const rules = [
   "RULE-SET,Reject,AD Block",
   "RULE-SET,iCloud,iCloud",
   "RULE-SET,Apple,Apple",
-  "RULE-SET,Proxy,Proxy",
   "RULE-SET,GFW,Proxy",
   "RULE-SET,tld-not-cn,Proxy",
-  "RULE-SET,Direct,Bypass",
   "RULE-SET,lancidr,Bypass,no-resolve",
   "RULE-SET,cncidr,Bypass,no-resolve",
   "RULE-SET,telegramcidr,Telegram,no-resolve",
-  // Rules
-  "RULE-SET,BlueArchiveGB,Hong Kong",
+  "RULE-SET,Direct,Bypass",
+  "RULE-SET,Proxy,Proxy",
   // Process
   "PROCESS-NAME,nikke.exe,Japan",
   "PROCESS-NAME,intl_service.exe,Japan",
