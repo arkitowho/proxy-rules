@@ -10,3 +10,8 @@ payload:
   - DOMAIN-SUFFIX,log.ngsm.nexon.com
   - DOMAIN-SUFFIX,sdk-push.mp.nexon.com
   - DOMAIN-SUFFIX,jp.livelog.nexon.com
+  - DOMAIN-SUFFIX,bluearchive.nexon.com
+  - DOMAIN-SUFFIX,signin.nexon.com
+  - DOMAIN-SUFFIX,rs.nxfs.nexon.com
+  - DOMAIN-SUFFIX,public.api.nexon.com
+  - DOMAIN-SUFFIX,nxm-clw-cdn.dn.nexoncdn.co.kr
