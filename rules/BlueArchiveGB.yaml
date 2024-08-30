@@ -15,3 +15,7 @@ payload:
   - DOMAIN-SUFFIX,rs.nxfs.nexon.com
   - DOMAIN-SUFFIX,public.api.nexon.com
   - DOMAIN-SUFFIX,nxm-clw-cdn.dn.nexoncdn.co.kr
+  - DOMAIN-SUFFIX,ssl.nexon.com
+  - DOMAIN-SUFFIX,toy-pages.nexon.com
+  - DOMAIN-SUFFIX,nxm-tw-bagl.nexon.com
+  - DOMAIN-SUFFIX,gtable.inface.nexon.com
