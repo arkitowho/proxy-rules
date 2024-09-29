@@ -13,3 +13,13 @@
 - 以下游戏强制走对应节点：
     - Blue Archive GB -> Hong Kong/Taiwan/Macao
     - NIKKE -> JP
+- 以下应用屏蔽联网正版检测：
+    - Ample Sound
+    - Rekordbox
+    - Goodhertz
+    - Melda Production
+    - SonicAcademy ANA
+    - Virtual DJ
+    - LennarDigital
+    - SoundID
+    - Adobe Creative Cloud
