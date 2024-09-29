@@ -210,9 +210,63 @@ const ruleProviders = {
     "url": "https://cdn.jsdelivr.net/gh/arkitowho/verge-rules@main/rules/BlueArchiveGB.yaml",
     "path": "./ruleset/arkitowho/bluearchivegb.yaml"
   },
-};
+  // ignaciocastro/a-dove-is-dumb | Adobe正版检测屏蔽
+  "AdobeAGSBlock": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/ignaciocastro/a-dove-is-dumb@main/clash.yaml",
+    "path": "./ruleset/ignaciocastro/adobeagsblock.yaml"
+  },
+}
 // 规则
 const rules = [
+  // Process
+  "PROCESS-NAME,nikke.exe,Japan",
+  "PROCESS-NAME,intl_service.exe,Japan",
+  // Process Bypass
+  "PROCESS-NAME,SoulseekQt.exe,DIRECT",
+  "PROCESS-NAME,parsecd.exe,DIRECT",
+  "PROCESS-NAME,pservice.exe,DIRECT",
+  "PROCESS-NAME,sunshine.exe,DIRECT",
+  "PROCESS-NAME,sunshinesvc.exe,DIRECT",
+  // Bypass
+  "DOMAIN-SUFFIX,bemani.cc,Bypass",
+  "DOMAIN-SUFFIX,komani.moe,Bypass",
+  "DOMAIN-SUFFIX,extransfer.xyz,Bypass",
+  "DOMAIN-SUFFIX,suu-fun.com,Bypass",
+  "DOMAIN-SUFFIX,store.ubi.com,Bypass",
+  "DOMAIN-SUFFIX,wzbc.edu.cn,Bypass",
+  // Piracy Host Block
+    // Ample Sound
+  "DOMAIN-SUFFIX,dl.amplesound.net,REJECT",
+  "DOMAIN-SUFFIX,d3.amplesound.net,REJECT",
+    // Rekordbox
+  "DOMAIN-SUFFIX,cloud.kuvo.com,REJECT",
+  "DOMAIN-SUFFIX,rb-share.kuvo.com,REJECT",
+  "DOMAIN-SUFFIX,accounts.us1.gigya.com,REJECT",
+  "DOMAIN-SUFFIX,us1.gigya.com,REJECT",
+    // Goodhertz
+  "DOMAIN-SUFFIX,www.expatriate.goodhertz.co,REJECT",
+  "DOMAIN-SUFFIX,expatriate.goodhertz.co,REJECT",
+  "DOMAIN-SUFFIX,goodhertz.com,REJECT",
+  "DOMAIN-SUFFIX,juce.com,REJECT",
+  "DOMAIN-SUFFIX,www.juce.com,REJECT",
+    // Melda Production
+  "DOMAIN-SUFFIX,www.meldaproduction.com,REJECT",
+    // SonicAcademy ANA
+  "DOMAIN-SUFFIX,www.sonicacademy.com,REJECT",
+    // Virtual DJ
+  "DOMAIN-SUFFIX,live.virtualdj.com,REJECT",
+    // LennarDigital
+  "DOMAIN-SUFFIX,www.lennardigital.com,REJECT",
+  "DOMAIN-SUFFIX,rhea.exsilia.net,REJECT",
+    // SoundID
+  "DOMAIN-SUFFIX,activation.sonarworks.com,REJECT",
+  "DOMAIN-SUFFIX,updates.sonarworks.com,REJECT",
+  "DOMAIN-SUFFIX,analytics.sonarworks.com,REJECT",
+  "DOMAIN-SUFFIX,accounts.sonarworks.com,REJECT",
+    // Adobe AGS
+  "RULE-SET,AdobeAGSBlock,REJECT",
   // Rules
   "RULE-SET,BlueArchiveGB,Taiwan",
   // blackmatrix7 规则集
@@ -241,45 +295,6 @@ const rules = [
   "RULE-SET,telegramcidr,Telegram,no-resolve",
   "RULE-SET,Direct,Bypass",
   "RULE-SET,Proxy,Proxy",
-  // Process
-  "PROCESS-NAME,nikke.exe,Japan",
-  "PROCESS-NAME,intl_service.exe,Japan",
-  // Process Bypass
-  "PROCESS-NAME,SoulseekQt.exe,DIRECT",
-  "PROCESS-NAME,parsecd.exe,DIRECT",
-  "PROCESS-NAME,pservice.exe,DIRECT",
-  "PROCESS-NAME,sunshine.exe,DIRECT",
-  "PROCESS-NAME,sunshinesvc.exe,DIRECT",
-  // Bypass
-  "DOMAIN-SUFFIX,bemani.cc,Bypass",
-  "DOMAIN-SUFFIX,komani.moe,Bypass",
-  "DOMAIN-SUFFIX,extransfer.xyz,Bypass",
-  "DOMAIN-SUFFIX,suu-fun.com,Bypass",
-  "DOMAIN-SUFFIX,store.ubi.com,Bypass",
-  // Piracy Host Block
-    // Ample Sound
-  "DOMAIN-SUFFIX,dl.amplesound.net,REJECT",
-  "DOMAIN-SUFFIX,d3.amplesound.net,REJECT",
-    // Rekordbox
-  "DOMAIN-SUFFIX,cloud.kuvo.com,REJECT",
-  "DOMAIN-SUFFIX,rb-share.kuvo.com,REJECT",
-  "DOMAIN-SUFFIX,accounts.us1.gigya.com,REJECT",
-  "DOMAIN-SUFFIX,us1.gigya.com,REJECT",
-    // Goodhertz
-  "DOMAIN-SUFFIX,www.expatriate.goodhertz.co,REJECT",
-  "DOMAIN-SUFFIX,expatriate.goodhertz.co,REJECT",
-  "DOMAIN-SUFFIX,goodhertz.com,REJECT",
-  "DOMAIN-SUFFIX,juce.com,REJECT",
-  "DOMAIN-SUFFIX,www.juce.com,REJECT",
-    // Melda Production
-  "DOMAIN-SUFFIX,www.meldaproduction.com,REJECT",
-    // SonicAcademy ANA
-  "DOMAIN-SUFFIX,www.sonicacademy.com,REJECT",
-    // Virtual DJ
-  "DOMAIN-SUFFIX,live.virtualdj.com,REJECT",
-    // LennarDigital
-  "DOMAIN-SUFFIX,www.lennardigital.com,REJECT",
-  "DOMAIN-SUFFIX,rhea.exsilia.net,REJECT",
   // 其他规则
   "DOMAIN-SUFFIX,taptap.io,Hong Kong",
   "GEOIP,LAN,Bypass,no-resolve",
