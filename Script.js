@@ -236,6 +236,7 @@ const rules = [
   "DOMAIN-SUFFIX,suu-fun.com,Bypass",
   "DOMAIN-SUFFIX,store.ubi.com,Bypass",
   "DOMAIN-SUFFIX,wzbc.edu.cn,Bypass",
+  "DOMAIN-SUFFIX,kms.loli.beer,Bypass",
   // Piracy Host Block
     // Ample Sound
   "DOMAIN-SUFFIX,dl.amplesound.net,REJECT",
