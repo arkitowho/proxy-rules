@@ -17,7 +17,6 @@ const dnsConfig = {
   "enable": true,
   "listen": "0.0.0.0:1053",
   "ipv6": true,
-  "use-system-hosts": false,
   "cache-algorithm": "arc",
   "enhanced-mode": "fake-ip",
   "fake-ip-range": "198.18.0.1/16",
@@ -32,7 +31,12 @@ const dnsConfig = {
     "localhost.ptlogin2.qq.com",
     "localhost.sec.qq.com",
     // 微信快速登录检测失败
-    "localhost.work.weixin.qq.com"
+    "localhost.work.weixin.qq.com",
+    // Game Platform
+    "*.srv.nintendo.net",
+    "*.stun.playstation.net",
+    "xbox.*.microsoft.com",
+    "*.xboxlive.com",
   ],
   "default-nameserver": ["223.5.5.5", "119.29.29.29", "1.1.1.1", "8.8.8.8"],
   "nameserver": [...domesticNameservers, ...foreignNameservers],
@@ -223,20 +227,23 @@ const rules = [
   // Process
   "PROCESS-NAME,nikke.exe,Japan",
   "PROCESS-NAME,intl_service.exe,Japan",
-  // Process Bypass
-  "PROCESS-NAME,SoulseekQt.exe,DIRECT",
-  "PROCESS-NAME,parsecd.exe,DIRECT",
-  "PROCESS-NAME,pservice.exe,DIRECT",
-  "PROCESS-NAME,sunshine.exe,DIRECT",
-  "PROCESS-NAME,sunshinesvc.exe,DIRECT",
-  // Bypass
-  "DOMAIN-SUFFIX,bemani.cc,Bypass",
-  "DOMAIN-SUFFIX,komani.moe,Bypass",
-  "DOMAIN-SUFFIX,extransfer.xyz,Bypass",
-  "DOMAIN-SUFFIX,suu-fun.com,Bypass",
-  "DOMAIN-SUFFIX,store.ubi.com,Bypass",
-  "DOMAIN-SUFFIX,wzbc.edu.cn,Bypass",
-  "DOMAIN-SUFFIX,kms.loli.beer,Bypass",
+    // Process Bypass
+    "PROCESS-NAME,SoulseekQt.exe,DIRECT",
+    "PROCESS-NAME,parsecd.exe,DIRECT",
+    "PROCESS-NAME,pservice.exe,DIRECT",
+    "PROCESS-NAME,sunshine.exe,DIRECT",
+    "PROCESS-NAME,sunshinesvc.exe,DIRECT",
+    "PROCESS-NAME,zerotier-one_x64.exe,DIRECT",
+  // Domain
+  "DOMAIN-SUFFIX,bemani.cc,DIRECT",
+  "DOMAIN-SUFFIX,komani.moe,DIRECT",
+  "DOMAIN-SUFFIX,extransfer.xyz,DIRECT",
+  "DOMAIN-SUFFIX,suu-fun.com,DIRECT",
+  "DOMAIN-SUFFIX,store.ubi.com,DIRECT",
+  "DOMAIN-SUFFIX,wzbc.edu.cn,DIRECT",
+  "DOMAIN-SUFFIX,kms.loli.beer,DIRECT",
+  "DOMAIN-SUFFIX,acgrip.com,Hong Kong",
+  "DOMAIN-SUFFIX,taptap.io,Hong Kong",
   // Piracy Host Block
     // Ample Sound
   "DOMAIN-SUFFIX,dl.amplesound.net,REJECT",
@@ -246,18 +253,8 @@ const rules = [
   "DOMAIN-SUFFIX,rb-share.kuvo.com,REJECT",
   "DOMAIN-SUFFIX,accounts.us1.gigya.com,REJECT",
   "DOMAIN-SUFFIX,us1.gigya.com,REJECT",
-    // Goodhertz
-  "DOMAIN-SUFFIX,www.expatriate.goodhertz.co,REJECT",
-  "DOMAIN-SUFFIX,expatriate.goodhertz.co,REJECT",
-  "DOMAIN-SUFFIX,goodhertz.com,REJECT",
-  "DOMAIN-SUFFIX,juce.com,REJECT",
-  "DOMAIN-SUFFIX,www.juce.com,REJECT",
-    // Melda Production
-  "DOMAIN-SUFFIX,www.meldaproduction.com,REJECT",
     // SonicAcademy ANA
   "DOMAIN-SUFFIX,www.sonicacademy.com,REJECT",
-    // Virtual DJ
-  "DOMAIN-SUFFIX,live.virtualdj.com,REJECT",
     // LennarDigital
   "DOMAIN-SUFFIX,www.lennardigital.com,REJECT",
   "DOMAIN-SUFFIX,rhea.exsilia.net,REJECT",
@@ -271,8 +268,8 @@ const rules = [
   // Rules
   "RULE-SET,BlueArchiveGB,Taiwan",
   // blackmatrix7 规则集
-  "RULE-SET,SteamCN,Bypass",
-  "RULE-SET,GameDownloadCN,Bypass",
+  "RULE-SET,SteamCN,DIRECT",
+  "RULE-SET,GameDownloadCN,DIRECT",
   "RULE-SET,OpenAI,All AI",
   "RULE-SET,Gemini,All AI",
   "RULE-SET,Claude,All AI",
@@ -282,24 +279,23 @@ const rules = [
   "RULE-SET,Bing,Bing",
   "RULE-SET,NIKKE,Japan",
   "RULE-SET,EpicGames,Epic Games",
-  "RULE-SET,Ubisoft,Bypass",
+  "RULE-SET,Ubisoft,DIRECT",
   // Loyalsoldier 规则集
-  "RULE-SET,Applications,Bypass",
-  "RULE-SET,Private,Bypass",
+  "RULE-SET,Applications,DIRECT",
+  "RULE-SET,Private,DIRECT",
   "RULE-SET,Reject,AD Block",
   "RULE-SET,iCloud,iCloud",
   "RULE-SET,Apple,Apple",
   "RULE-SET,GFW,Proxy",
   "RULE-SET,tld-not-cn,Proxy",
-  "RULE-SET,lancidr,Bypass,no-resolve",
-  "RULE-SET,cncidr,Bypass,no-resolve",
+  "RULE-SET,lancidr,DIRECT,no-resolve",
+  "RULE-SET,cncidr,DIRECT,no-resolve",
   "RULE-SET,telegramcidr,Telegram,no-resolve",
-  "RULE-SET,Direct,Bypass",
+  "RULE-SET,Direct,DIRECT",
   "RULE-SET,Proxy,Proxy",
   // 其他规则
-  "DOMAIN-SUFFIX,taptap.io,Hong Kong",
-  "GEOIP,LAN,Bypass,no-resolve",
-  "GEOIP,CN,Bypass,no-resolve",
+  "GEOIP,LAN,DIRECT,no-resolve",
+  "GEOIP,CN,DIRECT,no-resolve",
   "MATCH,Match"
 ];
 // 代理组通用配置
@@ -359,14 +355,14 @@ function main(config) {
       ...groupBaseOption,
       "name": "Bing",
       "type": "select",
-      "proxies": ["Proxy", "Bypass", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
+      "proxies": ["Proxy", "DIRECT", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/bing.svg"
     },
     {
       ...groupBaseOption,
       "name": "OneDrive",
       "type": "select",
-      "proxies": ["Bypass", "Proxy", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
+      "proxies": ["DIRECT", "Proxy", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/onedrive.svg"
     },
@@ -374,14 +370,14 @@ function main(config) {
       ...groupBaseOption,
       "name": "Apple",
       "type": "select",
-      "proxies": ["Proxy", "Bypass", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
+      "proxies": ["Proxy", "DIRECT", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple_2.png"
     },
     {
       ...groupBaseOption,
       "name": "iCloud",
       "type": "select",
-      "proxies": ["Proxy", "Bypass", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
+      "proxies": ["Proxy", "DIRECT", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png"
     },
@@ -389,7 +385,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Epic Games",
       "type": "select",
-      "proxies": ["Proxy", "Bypass", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
+      "proxies": ["Proxy", "DIRECT", "Hong Kong", "Japan", "United State", "Taiwan", "Singapore"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/epic.svg"
     },
@@ -402,16 +398,9 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "Bypass",
-      "type": "select",
-      "proxies": ["DIRECT", "Proxy"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/link.svg"
-    },
-    {
-      ...groupBaseOption,
       "name": "Match",
       "type": "select",
-      "proxies": ["Proxy", "Bypass"],
+      "proxies": ["Proxy", "DIRECT"],
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg"
     },
     {
@@ -419,7 +408,7 @@ function main(config) {
       "name": "Hong Kong",
       "type": "select",
       "include-all": true,
-      "filter": "HK|🇭🇰",
+      "filter": "HK|🇭🇰|香港",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg"
     },
     {
@@ -427,7 +416,7 @@ function main(config) {
       "name": "Japan",
       "type": "select",
       "include-all": true,
-      "filter": "JP|🇯🇵",
+      "filter": "JP|🇯🇵|日本",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg"
     },
     {
@@ -435,7 +424,7 @@ function main(config) {
       "name": "Taiwan",
       "type": "select",
       "include-all": true,
-      "filter": "CN|🇨🇳|TW",
+      "filter": "CN|🇨🇳|TW|台湾",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg"
     },
     {
@@ -443,7 +432,7 @@ function main(config) {
       "name": "United State",
       "type": "select",
       "include-all": true,
-      "filter": "US|🇺🇸",
+      "filter": "US|🇺🇸|美国",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg"
     },
     {
@@ -451,7 +440,7 @@ function main(config) {
       "name": "Singapore",
       "type": "select",
       "include-all": true,
-      "filter": "SG|🇸🇬",
+      "filter": "SG|🇸🇬|新加坡",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg"
     }
   ];
