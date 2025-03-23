@@ -180,8 +180,9 @@ const rules = [
   "PROCESS-NAME,intl_service.exe,Japan",
     // Process Bypass
     "PROCESS-NAME,SoulseekQt.exe,DIRECT",
-    "PROCESS-NAME,parsecd.exe,DIRECT",
-    "PROCESS-NAME,pservice.exe,DIRECT",
+    "PROCESS-NAME,sunshinesvc.exe,DIRECT",
+    "PROCESS-NAME,zerotier-one_x64.exe,DIRECT",
+    "PROCESS-NAME,tailscaled.exe,DIRECT",
   // Domain
   "DOMAIN-SUFFIX,bemani.cc,DIRECT",
   "DOMAIN-SUFFIX,komani.moe,DIRECT",
