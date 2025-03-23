@@ -6,7 +6,7 @@
 ## 注意事项 
 脚本会覆盖订阅自带规则，去除对我而言无用的规则组，规则集，精简规则，建立我自己的规则组
 
-Without DNS Policy将不根据流量地区区分海外网站与大陆网站走各自地区的DNS，一律使用阿里与腾讯的公共DNS解析，可加快解析速度
+由于Mihomo Party与Clash Verge Rev都加入了自己的DNS配置服务，以后将使用工具自己的DNS复写，脚本内将不内置DNS复写
 
 ## 部分规则如下：
 - 强制Soundcloud，Spotify走US节点
